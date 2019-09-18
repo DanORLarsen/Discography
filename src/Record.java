@@ -8,7 +8,7 @@ public class Record {
     private LocalDate date;
     private int trackCount = 0;
     private ArrayList<Track> tracks = new ArrayList<Track>();
-    private Long playtime;
+    private int playtime = 0;
 
     public void addTrack(Track track){
         tracks.add(track);
@@ -43,7 +43,7 @@ public class Record {
         return tracks;
     }
 
-    public Long getPlaytime() {
+    public int getPlaytime() {
         return playtime;
     }
 }

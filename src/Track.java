@@ -2,10 +2,10 @@ import java.time.Duration;
 
 public class Track {
     String title;
-    long playtimeD;
+    int playtimeD;
     boolean isBonusTrack;
 
-    public Track(String title, long playtimeD, boolean isBonusTrack) {
+    public Track(String title, int playtimeD, boolean isBonusTrack) {
         this.title = title;
         this.playtimeD = playtimeD;
         this.isBonusTrack = isBonusTrack;
@@ -15,7 +15,7 @@ public class Track {
         return title;
     }
 
-    public long getPlaytimeD() {
+    public int getPlaytimeD() {
         return playtimeD;
     }
 

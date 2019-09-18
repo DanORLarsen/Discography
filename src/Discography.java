@@ -16,7 +16,7 @@ public class Discography {
 
 
 
-    public void displayTime(long time){
+    public void displayTime(int time){
         int sec = (int)time%60;
         time-=sec;
         int min = (int) (time/60);
