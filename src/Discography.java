@@ -34,5 +34,11 @@ public class Discography {
     public String getArtistName() {
         return artistName;
     }
+
+    public String getDisplay() {
+        if (this.getRecords().size() != 0){
+        return artistName + "\n" + recordCount + " record(s)\n"  + getRecords().get(0).getTrackCount() + " Track(s)";}
+        else {return artistName + "\n" + recordCount + " record(s)\n";}
+    }
 }
 

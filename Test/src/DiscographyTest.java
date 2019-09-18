@@ -16,6 +16,7 @@ class DiscographyTest {
     Track america = new Track("America",252, true);
     Record uderProduction = new Record("Under Production", LocalDate.of(2074, Month.OCTOBER,6));
     LocalDate ld = LocalDate.of(2074,Month.OCTOBER,6);
+    Discography futureArits = new Discography("Future Artist");
 
     @Test
     void test1() {
@@ -25,6 +26,7 @@ class DiscographyTest {
         test.displayTime(andYouAndI.getPlaytimeD());
         assertFalse(andYouAndI.isBonusTrack);
         assertTrue(closeToTheEdge.getPlaytime() == 608);
+        assertTrue(closeToTheEdge.getType() == "single");
     }
 
     @Test
@@ -32,6 +34,7 @@ class DiscographyTest {
         assertTrue(america.isBonusTrack);
         assertTrue(america.getPlaytimeD() == 252);
         test.displayTime(america.getPlaytimeD());
+        closeToTheEdge.addTrack(america);
     }
 
     @Test
@@ -39,4 +42,23 @@ class DiscographyTest {
         assertTrue(uderProduction.getDate() == ld);
     }
 
+    @Test
+    void test4(){
+        closeToTheEdge.addTrack(america);
+        closeToTheEdge.addTrack(andYouAndI);
+        //Checks if track count is updated
+        assertTrue(closeToTheEdge.getTrackCount() == 2);
+        //Checks if closeToTheEdge got total playtime.
+        assertTrue((america.getPlaytimeD()+andYouAndI.getPlaytimeD())== closeToTheEdge.getPlaytime());
+        //Checks if type is album
+        assertTrue(closeToTheEdge.getType() == "album");
+        yesArtist.addRecord(closeToTheEdge);
+        System.out.println(yesArtist.getDisplay());
+    }
+
+    @Test
+    void test5(){
+        assertTrue(futureArits.getRecordCount() == 0);
+        System.out.println(futureArits.getDisplay());
+    }
 }
