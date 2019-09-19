@@ -14,7 +14,7 @@ public class Discography {
         recordCount++;
     }
 
-
+//lav modulus time og /time for at vise det som krævet
 
     public void displayTime(int time){
         int sec = (int)time%60;
